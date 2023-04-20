@@ -1,7 +1,13 @@
 # importing libraries
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
+
+# Labels of pie charts
+label_pref = lambda val : f'{val / 100 * len(pref_day):.0f}\n{val:.0f}%'
+label_skip = lambda val : f'{val / 100 * len(skip_cagegory):.0f}\n{val:.0f}%'
+label_sleep = lambda val : f'{val / 100 * len(sleep_time):.0f}\n{val:.0f}%'
+label_veg = lambda val : f'{val / 100 * len(veg_non):.0f}\n{val:.0f}%'
+label_pref = lambda val : f'{val / 100 * len(food_preference):.0f}\n{val:.0f}%'
 
 # Loading csv file
 df = pd.read_csv('Survey on Mess Food Usage by IITH Students.csv')
@@ -9,16 +15,25 @@ df = pd.read_csv('Survey on Mess Food Usage by IITH Students.csv')
 # Combining all three columns of skipping meals
 count_meal_skip = df[['Roughly what would be the count of no of times you miss mess food in a week? (1-7)','Roughly what would be the count of no of times you miss mess food in a week? (8-14)','Roughly what would be the count of no of times you miss mess food in a week? (15-21)']].copy()
 count_meal_skip = count_meal_skip.stack().reset_index(drop=True)
+count_meal_skip.plot.hist(edgecolor = "black",title='No of times Student miss mess food in a week')
+plt.savefig('histogram_meal_skip.png')
+plt.close()
 # print(count_meal_skip.to_string())
 
 # Sorting how often student skip meal
 skip_cagegory = df[['How often do you skip mess eating mess food?']].copy()
 skip_cagegory = skip_cagegory.sort_values(by=['How often do you skip mess eating mess food?'])
+skip_cagegory.groupby('How often do you skip mess eating mess food?').size().plot(kind='pie', autopct=label_skip, textprops={'fontsize': 14}, colors=['violet', 'lime','gold', 'skyblue'],title='name title')
+plt.savefig('pie_skip_categoty.png',bbox_inches="tight")
+plt.close()
 # print(skip_cagegory.to_string())
 
 # Sorting late and early night sleeping people
 sleep_time = df[['You are?']].copy()
 sleep_time = sleep_time.sort_values(by=['You are?'])
+sleep_time.groupby('You are?').size().plot(kind='pie', autopct=label_sleep, textprops={'fontsize': 18}, colors=['skyblue', 'lime'],title='name title')
+plt.savefig('pie_sleep_categoty.png',bbox_inches="tight")
+plt.close()
 # print(sleep_time.to_string())
 
 # Droping nan values since there were some students who doesn't skip meals
@@ -26,6 +41,9 @@ sleep_time = sleep_time.sort_values(by=['You are?'])
 # Sorting veg and non-veg
 veg_non = df[['Are you a vegetarian or non-vegetarian?']].copy()
 veg_non = veg_non.sort_values(by=['Are you a vegetarian or non-vegetarian?']).dropna()
+veg_non.groupby('Are you a vegetarian or non-vegetarian?').size().plot(kind='pie', autopct=label_veg, textprops={'fontsize': 18}, colors=['lime','gold'],title='name title')
+plt.savefig('pie_veg_non-veg.png',bbox_inches="tight")
+plt.close()
 # print(veg_non.to_string())
 
 # Sorting by possible reasons for skippin meals at mess
@@ -36,11 +54,17 @@ reason = reason.sort_values(by=['What are probable reason(s) for you to skip the
 # Sorting by food preference
 food_preference = df[['What\'s your food preference?']].copy()
 food_preference = food_preference.sort_values(by=['What\'s your food preference?']).dropna()
+food_preference.groupby('What\'s your food preference?').size().plot(kind='pie', autopct=label_pref,colors=['lime','tomato','violet', 'gold', 'skyblue'],textprops={'fontsize': 12},title='name title')
+plt.savefig('pie_food_pref.png',bbox_inches="tight")
+plt.close()
 # print(food_preference.to_string())
 
 # Sorting by skipping of meal by breakfast, lunch and dinner
 skip_meal = df[['Which meal do you usually skip in a day?']].copy()
 skip_meal = skip_meal.sort_values(by=['Which meal do you usually skip in a day?']).dropna()
+skip_meal.groupby('Which meal do you usually skip in a day?').size().plot(kind='bar')
+plt.savefig('bar_timing_skip.png',bbox_inches='tight')
+plt.close()
 # print(skip_meal.to_string())
 
 # Sorting by Gender
@@ -66,6 +90,9 @@ degree = degree.sort_values(by=['What degree are you pursuing in IITH?']).dropna
 # Sorting by weekend/weekdays
 pref_day = df[['What days of the week are you likely to skip?']].copy()
 pref_day = pref_day.sort_values(by=['What days of the week are you likely to skip?']).dropna()
+pref_day.groupby('What days of the week are you likely to skip?').size().plot(kind='pie', autopct=label_pref, textprops={'fontsize': 18}, colors=['violet', 'lime'],title='name title')
+plt.savefig('pie_plot_weekdays.png',bbox_inches="tight")
+plt.close()
 # print(pref_day.to_string())
 
 # Sorting by fmaily income
