@@ -134,4 +134,4 @@ alter_mess = alter_mess.sort_values(by=["If yes, what's your alternative? "]).dr
 # Sorting for students who dont skip meals
 no_skip = df[['Username',"Why don't you skip mess food?"]].copy()
 no_skip = no_skip.sort_values(by=["Why don't you skip mess food?"]).dropna()
-print(no_skip.to_string())
+# print(no_skip.to_string())
