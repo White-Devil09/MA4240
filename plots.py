@@ -8,6 +8,9 @@ label_skip = lambda val : f'{val / 100 * len(skip_cagegory):.0f}\n{val:.0f}%'
 label_sleep = lambda val : f'{val / 100 * len(sleep_time):.0f}\n{val:.0f}%'
 label_veg = lambda val : f'{val / 100 * len(veg_non):.0f}\n{val:.0f}%'
 label_pref = lambda val : f'{val / 100 * len(food_preference):.0f}\n{val:.0f}%'
+label_income = lambda val : f'{val / 100 * len(fam_income):.0f}\n{val:.0f}%'
+label_gender = lambda val : f'{val / 100 * len(gender):.0f}\n{val:.0f}%'
+label_degree = lambda val : f'{val / 100 * len(degree):.0f}\n{val:.0f}%'
 
 # Loading csv file
 df = pd.read_csv('Survey on Mess Food Usage by IITH Students.csv')
@@ -70,21 +73,33 @@ plt.close()
 # Sorting by Gender
 gender = df[['Gender :']].copy()
 gender = gender.sort_values(by=['Gender :']).dropna()
+gender.groupby('Gender :').size().plot(kind='pie', autopct=label_gender,colors=['lime','tomato','violet'],textprops={'fontsize': 12},title='name title')
+plt.savefig('pie_gender.png',bbox_inches="tight")
+plt.close()
 # print(gender.to_string())
 
 # Sorting by Age
 age = df[['Age :']].copy()
 age = age.sort_values(by=['Age :']).dropna()
+age.plot(kind='box')
+plt.savefig('box_age.png')
+plt.close()
 # print(age.to_string())
 
 # Sorting by Department
 dept = df[['What department are you in?']].copy()
 dept = dept.sort_values(by=['What department are you in?']).dropna()
+dept.groupby('What department are you in?').size().plot(kind='bar')
+plt.savefig('bar_department.png',bbox_inches='tight')
+plt.close()
 # print(dept.to_string())
 
 # Sorting by Degree
 degree = df[['What degree are you pursuing in IITH?']].copy()
 degree = degree.sort_values(by=['What degree are you pursuing in IITH?']).dropna()
+degree.groupby('What degree are you pursuing in IITH?').size().plot(kind='pie', autopct=label_degree,colors=['lime','tomato','violet'],textprops={'fontsize': 12},title='name title')
+plt.savefig('pie_degree.png',bbox_inches="tight")
+plt.close()
 # print(degree.to_string())
 
 # Sorting by weekend/weekdays
@@ -98,6 +113,9 @@ plt.close()
 # Sorting by fmaily income
 fam_income = df[['Family Income (Per Annum)']].copy()
 fam_income = fam_income.sort_values(by=['Family Income (Per Annum)']).dropna()
+fam_income.groupby('Family Income (Per Annum)').size().plot(kind='pie', autopct=label_income, textprops={'fontsize': 18}, colors=['violet', 'lime','tomato'],title='name title')
+plt.savefig('pie_income.png',bbox_inches="tight")
+plt.close()
 # print(fam_income.to_string())
 
 # Sorting by will eat outside incase they skip meal
@@ -105,6 +123,7 @@ outside_mess = df[['Do you eat outside mess, in case you miss a meal?']].copy()
 outside_mess = outside_mess.sort_values(by=['Do you eat outside mess, in case you miss a meal?']).dropna()
 # print(outside_mess.to_string())
 
+'''Need to break options and take intersections'''
 # Sorting by will eat outside incase they skip meal
 alter_mess = df[["If yes, what's your alternative? "]].copy()
 alter_mess = alter_mess.sort_values(by=["If yes, what's your alternative? "]).dropna()
@@ -115,4 +134,4 @@ alter_mess = alter_mess.sort_values(by=["If yes, what's your alternative? "]).dr
 # Sorting for students who dont skip meals
 no_skip = df[['Username',"Why don't you skip mess food?"]].copy()
 no_skip = no_skip.sort_values(by=["Why don't you skip mess food?"]).dropna()
-# print(no_skip.to_string())
+print(no_skip.to_string())
