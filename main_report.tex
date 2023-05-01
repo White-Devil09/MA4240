@@ -271,48 +271,59 @@ Here we can see that the BTech/Bdes responded the most. Secondly among the UGs t
 It is clearly evident that the late night sleepers miss their meals the most. They clearly miss out on breakfasts followed by lunch, dinner is being missed out the least (both early and late night sleepers). Early sleeping people do not miss their meals regularly.
 
 \pagebreak
-
+\begin{table}[H]
+    \centering
+    \caption{Contingency table }
+    \label{tab:contingency}
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \multicolumn{2}{|c|}{\multirow{2}{*}{}} & \multicolumn{4}{c|}{Meal Skipped} \\
+    \cline{3-6}
+    \multicolumn{2}{|c|}{} & Breakfast & Lunch &Dinner &Total \\
+    \hline
+    \multirow{2}{*}{Sleep Time} & Early sleeping person & 12 & 28 &16 &56 \\
+    \cline{2-6}
+    & Late night sleeping person & 104 & 80 & 30 &214 \\
+    \hline
+    &\multicolumn{1}{c|}{Total} & 116 & 108 & 46 & 270\\
+    \hline
+    \end{tabular}
+\end{table}
+    It is clearly evident that the late night sleepers miss their meals the most. They clearly miss out on breakfasts followed by lunch, dinner is being missed out the least (both early and late night sleepers). Early sleeping people do not miss their meals regularly.\\ \\
+\bigskip
+\\
 \centerline{\underline{\bfseries{We will have a look on some pie charts now}}}
-
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.9]{pie_degree.png}
-    \caption{Degree at IITH pie chart}  
-    \label{Normality_plot}
-\end{figure}
-Clearly evident that most of the respondents are from Btech/Bdes.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale = 0.9]{pie_food_pref.png}
+    \includegraphics[scale = 1]{pie_food_pref.png}
     \caption{Food preference pie chart}  
     \label{Normality_plot}
 \end{figure}
 This pie chart shows the regional food preferences of the people in IITH. We can observe that people are not very particular about their food preferences.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.9]{pie_gender.png}
+    \includegraphics[scale = 1]{pie_gender.png}
     \caption{Gender Split}  
     \label{Normality_plot}
 \end{figure}
 The charts compare male to female responses. we see that nearly one-third of the total responses came from males
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.9]{pie_income.png}
+    \includegraphics[scale = 1]{pie_income.png}
     \caption{Student's Family Income}  
     \label{Normality_plot}
 \end{figure}
 The chart shows the distribution of different economic classes in the responses. We can observe that it is very well balanced.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.9]{pie_plot_weekdays.png}
+    \includegraphics[scale = 1]{pie_plot_weekdays.png}
     \caption{Skipping meals on weekends or weekdays}  
     \label{Normality_plot}
 \end{figure}
 The pie chart above gives a comparison of skipping meals on weekends vs weekdays. We see the majority of skipping on weekdays. This may be because of specials on weekends.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.75]{pie_skip_categoty.png}
+    \includegraphics[scale = 0.77]{pie_skip_categoty.png}
     \caption{Frequency of missing food}  
     \label{Normality_plot}
 \end{figure}
@@ -334,7 +345,7 @@ This pie chart compares Early sleepers vs Late sleepers in the responses. From t
 \end{figure}
 This pie chart compares Non-veg eaters vs veg eaters in the responses. From this chart, we can infer that there are 2 times as non-veg eaters as veg eaters!!
 
-% \pagebreak
+\pagebreak
 \bigskip
 \section{Confidence Interval Estimation of Mean and Variance of the data.}
 \begin{itemize}
