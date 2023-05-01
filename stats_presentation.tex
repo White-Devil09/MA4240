@@ -6,7 +6,12 @@
     \usepackage{multirow}                                         %%
     \usepackage{hhline}                                           %%
     \usepackage{ifthen}   
-    
+\usepackage{listings}
+\usepackage[latin1]{inputenc}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+  
 \newcounter{saveenumi}
 \newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
 \newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}                                      
@@ -24,7 +29,7 @@
 
 % Title page details: 
 \title{\textbf{Mess Food Usage by IITH Student Community} \\
-MA4240:Applied Statistics - Group Project}
+MA4240:Applies Statistics - Group Project}
 \author{Blessy Anvitha \quad Saanvi Amrutha \quad Anirudh Srinivasan \quad Arnav Asati\\ Lokesh Surana \quad Bhanu Prasad \quad Samar Singhai \quad Shivanand}
 \date{\today}
 \logo{\large \LaTeX{}}
@@ -124,7 +129,7 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
 \begin{figure}[H]
      \centering
      \caption{Analysing whether the univariate numerical dataset is normally distributed or not }
-    \includegraphics[scale = 0.5]{normality_plot.png} 
+    \includegraphics[scale = 0.54]{normality_plot.png} 
     \label{Normality_plot}
 \end{figure}
 \end{block}
@@ -134,7 +139,7 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
 \begin{figure}
       \centering
     \caption{Frequency of Number of times Meal skip }
-    \includegraphics[scale = 0.45]{histogram_meal_skip.png}  
+    \includegraphics[scale = 0.55]{histogram_meal_skip.png}  
     \label{histogram_meal_skip}
 \end{figure}
 \end{block}
@@ -145,8 +150,18 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
 \begin{figure}
       \centering
     \caption{Degree vs number of responses }
-    \includegraphics[scale = 0.45]{bar_degree.png}  
+    \includegraphics[scale = 0.55]{bar_degree.png}  
     \label{fig:side-by-side}
+\end{figure}
+\end{block}
+\end{frame}
+\begin{frame}{Data Analysis}
+\begin{block}{Reason of skipping based on Degree}
+\begin{figure}
+      \centering
+    \caption{Reason vs degree vs meals skipped}
+    \includegraphics[scale = 0.55]{Meal Skipping - Reason Seg chart.png}  
+    \label{gender_seg}
 \end{figure}
 \end{block}
 \end{frame}
@@ -155,7 +170,7 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
 \begin{figure}
       \centering
     \caption{Branch vs number of responses}
-    \includegraphics[scale = 0.38]{bar_department.png}  
+    \includegraphics[scale = 0.55]{bar_department.png}  
     \label{fig:side-by-side}
 \end{figure}
 \end{block}
@@ -170,6 +185,16 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
 \end{figure}
 \end{block}
 \end{frame}
+\begin{frame}{Data Analysis}
+\begin{block}{Gender and skipping meals}
+\begin{figure}
+      \centering
+    \caption{Gender vs Meals skipped }
+    \includegraphics[scale = 0.55]{Meal Skipping - Gender Seg chart.png}  
+    \label{gender_seg}
+\end{figure}
+\end{block}
+\end{frame}
 \begin{frame}{Exploratory Data Analysis}
 \begin{block}{Economic classes}
 \begin{figure}
@@ -180,6 +205,16 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
 \end{figure}
 \end{block}
 \end{frame}
+\begin{frame}{Data Analysis}
+\begin{block}{Relation of family income and skipping meals}
+\begin{figure}
+      \centering
+    \caption{Family income vs Meals skipped }
+    \includegraphics[scale = 0.55]{Meal Skipping - Family Income Seg chart.png}  
+    \label{income_seg}
+\end{figure}
+\end{block}
+\end{frame}
 \begin{frame}{Exploratory Data Analysis}
 \begin{block}{Majority are late night sleepers!!}
 \begin{figure}
@@ -187,6 +222,16 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
     \caption{Early sleepers vs Late sleepers}
     \includegraphics[scale = 0.55]{pie_sleep_categoty.png}  
     \label{fig:side-by-side}
+\end{figure}
+\end{block}
+\end{frame}
+\begin{frame}{Data Analysis}
+\begin{block}{Sleep time and meal skipping}
+\begin{figure}
+      \centering
+    \caption{Sleep Time vs Meals skipped }
+    \includegraphics[scale = 0.55]{Meal Skipping - Sleep time Seg chart.png}  
+    \label{sleep_seg}
 \end{figure}
 \end{block}
 \end{frame}
@@ -206,11 +251,24 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
 \begin{figure}
       \centering
     \caption{Meal skip vs type of meal }
-    \includegraphics[scale = 0.5]{bar_timing_skip.png}  
+    \includegraphics[scale = 0.55]{bar_timing_skip.png}  
     \label{bar_timing_skip}
 \end{figure}
 \end{block}
 \end{frame}
+\begin{frame}{Data Analysis}
+\begin{block}{Reasons for skipping}
+\begin{figure}
+      \centering
+    \caption{Reasons vs Number of responses }
+    \includegraphics[scale = 0.55]{bar_reasons.png}  
+    \label{bar_reasons}
+\end{figure}
+\end{block}
+\end{frame}
+
+
+
 \begin{frame}{Data Analysis}
 \begin{block}{Which food is preferred the most?}
 \begin{figure}
@@ -242,9 +300,10 @@ Through this project we tried to understand \textbf{how the students of IIT Hyde
 \end{block}
 \end{frame}
 
-\section{Confidence Interval Estimation}
-\begin{frame}{Confidence Interval Estimation}
-    \begin{block}{Case-1: Confidence Interval of $\mu$, where $\mu$ is the mean number of meals skipped by a student at IITH in a week. }
+\section{Class Interval Estimation}
+\begin{frame}{Class Interval Estimation}
+    \begin{block}{}
+        \item \textbf{Case-1: Confidence Interval of $\mu$, where $\mu$ is the mean number of meals skipped by a student at IITH in a week. } \\
        Consider a random sample of size $n = 50$. 
        Sample mean and sample standard deviation are $\bar{x}$ and $S$ respectively, where
         \begin{align*}
@@ -261,9 +320,9 @@ Now, the resulting $95\%$ CI is:
       Thus, based on the sample data, CI of mean number of meals skipped by a student in a week is $[5.792,8.168]$ 
       \end{block}
 \end{frame}
-
-\begin{frame}{Confidence Interval Estimation}
-    \begin{block}{Case-2: CI of $\sigma$,where $\sigma$ is the standard deviation of the population. }
+\begin{frame}{Class Interval Estimation}
+    \begin{block}{}
+        \item \textbf{Case-2: CI of $\sigma$,where $\sigma$ is the standard deviation of the population.} \\
        Consider a random sample of size $n = 50$.   \\
        Here sample variance,    $S^2 = 17.49$  \\
        Take, significance level $\alpha$ = 0.05                
@@ -280,8 +339,6 @@ Now, the resulting $95\%$ CI is:
           This leads to $95\%$ CI for $\sigma$ :$[3.563,5.336]$ 
            \end{block}
 \end{frame}
-
-
 \section{Hypothesis Testing}
 \begin{frame}{Hypothesis Testing}
 \begin{block}{}
@@ -320,7 +377,7 @@ $t = \frac{\left(\bar{x_1}-\bar{x_2}\right) - D_0}{S_p\sqrt{\frac{1}{n_1}+\frac{
 \begin{frame}{Hypothesis Testing}
 \begin{block}{}
 \textbf{Case-2: Verifying if the mean count of Undergraduate students who skip mess is different from 6 with 5\% as level of significance.}\\
-Here, sample size $n = 127 > 30$, So we can assume that the population distribution is normal.\\
+Here, sample size n = 127\\
 Now, we set up the research hypotheses :
 \begin{center}
 $H_0 : \mu = 6$ \quad vs \quad $H_a : \mu \neq 6$\\
@@ -355,7 +412,7 @@ Since p-value is less than $\alpha$, there is significant evidence that the mean
 Here, 
 \begin{center}
 $H_0 : \sigma^2 \geq 7$ vs $H_a : \sigma^2 < 7$\\
-$n = 124 > 30$\\
+n = 124\\
 $S^2$ = 16.497
 \end{center}
 Test Statistic:
@@ -375,7 +432,7 @@ Since the computed value 41.4108 is less than the critical value of 149.8846, th
 Here,
 \begin{center}
 $H_0 : \pi \leq 0.1$ vs $H_a : \pi > 0.1$\\
-$n = 41 > 30$
+n = 41
 \end{center}
 Test Statistic :
 \begin{center}
