@@ -151,14 +151,22 @@ around 6 (times a person missing a meal during a week), with the 1 outlier(great
 7.
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.9]{side-by-side-gender-skip-relation.png}
+    \includegraphics[scale = 0.8]{side-by-side-gender-skip-relation.png}
     \caption{Week-days vs Week-ends (Side-by-Side Box plot)}  
     \label{fig:side-by-side}
 \end{figure}
+\begin{center}
+    Q1(Male) = 4 \quad  Q1(Female) = 3\\
+    Q2(Male) = 7 \quad Q2(Female) = 5\\
+    Q3(Male) = 10 \quad Q3(Female) = 9 \\
+    IQR(Male) = 6 \quad IQR(Female) = 6  
+\end{center}
+It is clear that males are skipping the meal more when compared to females.
+
 Normal Probability Plot, which is used to assess whether the data is normally distributed or not, is given below:
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.9]{normality_plot.png}
+    \includegraphics[scale = 0.8]{normality_plot.png}
     \caption{Normal Probability Plot}  
     \label{fig:Normality_plot}
 \end{figure}
@@ -172,7 +180,7 @@ Normal Probability Plot, which is used to assess whether the data is normally di
     \centering
     \includegraphics[scale = 0.7]{bar_degree.png}
     \caption{Degree vs number of responses bar graph}  
-    \label{fig:Normality_plot}
+    \label{fig:bar_degree}
 \end{figure}
 From this graph, we can see that students from BTech/Bdes responded the most for the contribution of data, which makes the analysis more centered around them.
 
@@ -183,7 +191,7 @@ From this graph, we can see that students from BTech/Bdes responded the most for
     \centering
     \includegraphics[scale = 0.6]{bar_department.png}
     \caption{Branches vs number of responses bar graph}  
-    \label{fig:Normality_plot}
+    \label{fig:bar_department}
 \end{figure}
 This graph shows that the people who responded the most are from Civil, BM/BT, Mechanical \& Electrical.
 
@@ -193,7 +201,7 @@ This graph shows that the people who responded the most are from Civil, BM/BT, M
     \centering
     \includegraphics[scale = 0.7]{bar_familyincome.png}
     \caption{Family income bar graph}  
-    \label{fig:Normality_plot}
+    \label{fig:bar_familyincome}
 \end{figure}
 It is evident that all the three classes have almost equal share in our data.\\
 
@@ -203,7 +211,7 @@ It is evident that all the three classes have almost equal share in our data.\\
     \centering
     \includegraphics[scale = 0.7]{bar_timing_skip.png}
     \caption{Meal skip bar graph}
-    \label{fig:Normality}
+    \label{fig:bar_timing_skip}
 \end{figure}
 From this bar graph, we can easily see that breakfast is being missed majorly by people (since many people work till late at night and wake up late in the morning). Lunch is also being missed by the majority of people (since maybe lunch is not good in the mess).\\
 
@@ -213,7 +221,7 @@ From this bar graph, we can easily see that breakfast is being missed majorly by
     \centering
     \includegraphics[scale = 0.7]{histogram_meal_skip.png}
     \caption{Frequecy of food missed vs Number of students}  
-    \label{Normality_plot}
+    \label{fig:histogram_meal_skip}
 \end{figure}
 From the histograms, it is evident that the plot is right-skewed, meaning that the people missing food more than 10 times a week are fewer. People mostly skip meals 2 to 7 times a week.
 % \pagebreak
@@ -224,7 +232,7 @@ From the histograms, it is evident that the plot is right-skewed, meaning that t
     \centering
     \includegraphics[scale = 0.7]{bar_reasons.png}
     \caption{Reasons vs frequency bar graph}  
-    \label{fig:Normality_plot}
+    \label{fig:bar_reasons}
 \end{figure}
 We can easily observe that the most common reason of missing a particular meal is 'due to the bad taste of the food' being served. Other common reasons being 'I'm bit lazy', 'I don't get time', 'Like to go out for a meal' and others.
 % \pagebreak
@@ -235,7 +243,7 @@ We can easily observe that the most common reason of missing a particular meal i
     \centering
     \includegraphics[scale = 0.7]{Meal Skipping - Family Income Seg chart.png}
     \caption{Skip meal-Family income segmented bar chart}  
-    \label{fig:Normality_plot}
+    \label{fig:Meal Skipping - Family Income Seg chart}
 \end{figure}
 It is evident that the meal skipping by the people is not very strongly correlated with their family income (we are getting similar bar charts for each economic class).\\
 
@@ -245,7 +253,7 @@ It is evident that the meal skipping by the people is not very strongly correlat
     \centering
     \includegraphics[scale = 0.7]{Meal Skipping - Gender Seg chart.png}
     \caption{Skip meal-Gender segmented bar chart}  
-    \label{fig:Normality_plot}
+    \label{fig:Meal Skipping - Gender Seg chart}
 \end{figure}
 First of all it is clearly evident that the number of males who skip meals are around 3 times the number of females who skip meals (during a week) this is probably because less females(24\%) filled the form compared to males(76\%). In females all the three meals are being equally skipped (lunch having slight upper hand). In males breakfast is being skipped the most, followed by lunch. Dinner is not missed much by both males and females.
 \pagebreak
@@ -256,7 +264,7 @@ First of all it is clearly evident that the number of males who skip meals are a
     \centering
     \includegraphics[scale = 0.7]{Meal Skipping - Reason Seg chart.png}
     \caption{Skip meal-Reason segmented bar chart}  
-    \label{fig:Normality_plot}
+    \label{fig:Meal Skipping - Reason Seg chart}
 \end{figure}
 Here we can see that the BTech/Bdes responded the most. Secondly among the UGs the most common reason to be observed of missing a meal is 'taste of the food and laziness', with some other less common reasons being, 'hygiene', 'lack of appetite', 'do not have time', etc. For Non-UGs the most common reason being 'taste of the food' and least common reson being 'hygiene'.\\
 
@@ -266,7 +274,7 @@ Here we can see that the BTech/Bdes responded the most. Secondly among the UGs t
     \centering
     \includegraphics[scale = 0.7]{Meal Skipping - Sleep time Seg chart.png}
     \caption{Skip meal-Sleep segmented bar charts}  
-    \label{fig:Normality_plot}
+    \label{fig:Meal Skipping - Sleep time Seg chart}
 \end{figure}
 It is clearly evident that the late night sleepers miss their meals the most. They clearly miss out on breakfasts followed by lunch, dinner is being missed out the least (both early and late night sleepers). Early sleeping people do not miss their meals regularly.
 
@@ -297,35 +305,35 @@ It is clearly evident that the late night sleepers miss their meals the most. Th
     \centering
     \includegraphics[scale = 1]{pie_food_pref.png}
     \caption{Food preference pie chart}  
-    \label{Normality_plot}
+    \label{fig:pie_food_pref}
 \end{figure}
 This pie chart shows the regional food preferences of the people in IITH. We can observe that people are not very particular about their food preferences.
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 1]{pie_gender.png}
     \caption{Gender Split}  
-    \label{Normality_plot}
+    \label{fig:pie_gender}
 \end{figure}
 The charts compare male to female responses. we see that nearly one-third of the total responses came from males
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 1]{pie_income.png}
     \caption{Student's Family Income}  
-    \label{Normality_plot}
+    \label{fig:pie_income}
 \end{figure}
 The chart shows the distribution of different economic classes in the responses. We can observe that it is very well balanced.
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 1]{pie_plot_weekdays.png}
     \caption{Skipping meals on weekends or weekdays}  
-    \label{Normality_plot}
+    \label{fig:pie_plot_weekdays}
 \end{figure}
 The pie chart above gives a comparison of skipping meals on weekends vs weekdays. We see the majority of skipping on weekdays. This may be because of specials on weekends.
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.77]{pie_skip_categoty.png}
     \caption{Frequency of missing food}  
-    \label{Normality_plot}
+    \label{fig:pie_skip_categoty}
 \end{figure}
 This pie chart compares the frequency of meal skipping. We find that half of the people rarely miss a meal.\\\\
 \begin{figure}[H]
@@ -333,7 +341,7 @@ This pie chart compares the frequency of meal skipping. We find that half of the
     \centering
     \includegraphics[scale = 0.75]{pie_sleep_categoty.png}
     \caption{Students are early sleepers or late nighters}  
-    \label{Normality_plot}
+    \label{fig:pie_sleep_categoty}
 \end{figure}
 This pie chart compares Early sleepers vs Late sleepers in the responses. From this chart, we can infer that most are Late sleepers!!
 % \centerline{\underline{\bfseries{Veg Vs}}}
@@ -341,7 +349,7 @@ This pie chart compares Early sleepers vs Late sleepers in the responses. From t
     \centering
     \includegraphics[scale = 0.9]{pie_veg_non-veg.png}
     \caption{Vegetarian vs Non-Vegetarian}  
-    \label{Normality_plot}
+    \label{fig:pie_veg_non-veg}
 \end{figure}
 This pie chart compares Non-veg eaters vs veg eaters in the responses. From this chart, we can infer that there are 2 times as non-veg eaters as veg eaters!!
 
